@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import portfolio_view
 
 urlpatterns = [
-    # Здесь вы можете подключить ваши маршруты, если они есть
+    path('', portfolio_view, name='home'),  # Главная страница
 ]
+    # Здесь вы можете подключить ваши маршруты, если они есть
+
