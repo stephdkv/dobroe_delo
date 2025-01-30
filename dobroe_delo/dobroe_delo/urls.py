@@ -19,15 +19,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from projects import views
+from projects.views import documents_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Админка
     path('', include('projects.urls')),
-    path('projects/<slug:slug>/', views.project_detail_view, name='project_detail')  # Подключение маршрутов из приложения projects
+    path('projects/<slug:slug>/', views.project_detail_view, name='project_detail'),
+    path("documents/", documents_view, name="documents"),  # Подключение маршрутов из приложения projects
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

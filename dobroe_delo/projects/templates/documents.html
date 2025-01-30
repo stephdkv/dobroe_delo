@@ -7,7 +7,7 @@
 >
   <head>
     <meta charset="utf-8" />
-    <title>{{ project.title }}</title>
+    <title>Документы</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
@@ -84,17 +84,9 @@
         </div>
       </div>
     </div>
-    {% with project.images.all|first as first_image %}
-    <div
-      class="header project-page1 background-image2"
-      style="
-        background-image: linear-gradient(#1f6fff4a, #1f6fff4a),
-          url('{{ first_image.image.url }}');
-      "
-    >
-      {% endwith %}
+    <div class="header project-page1 background-image3">
       <div class="w-container">
-        <h1 class="main-heading">{{ project.title }}</h1>
+        <h1 class="main-heading">Документы</h1>
         <div class="divider"></div>
       </div>
     </div>
@@ -103,21 +95,18 @@
         class="w-container"
         style="padding-top: 100px; padding-bottom: 100px"
       >
-        <h2>Описание проекта</h2>
+        <h2>Документы по проектам</h2>
         <div class="divider grey"></div>
-        <p>{{ project.description }}</p>
-      </div>
-    </div>
-    <div id="projects" class="section grey">
-      <div class="w-container">
-        <h2>галерея</h2>
+        {% for group in document_groups %}
+        <h2>{{ group.name }}</h2>
+        <ul style="padding-left: 0px">
+          {% for document in group.documents.all %}
+          <li style="list-style-type: none; padding-bottom: 10px">
+            <a href="{{ document.file.url }}">{{ document.short_name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
         <div class="divider grey"></div>
-        {% for image in project.images.all %}
-        <img
-          src="{{ image.image.url }}"
-          alt="{{ project.title }}"
-          style="padding-bottom: 100px"
-        />
         {% endfor %}
       </div>
     </div>

@@ -134,17 +134,14 @@ p {
 }
 
 .header.project-page1.background-image2 {
-  background-image: linear-gradient(#1f6fff4a, #1f6fff4a),
-    url("../images/photo_2024-05-31_13-45-45.jpg");
-  background-position: 50% 50%, 50%;
   background-size: auto, cover;
 }
 
 .header.project-page1.background-image3 {
   background-image: linear-gradient(#1f6fff4a, #1f6fff4a),
-    url("../images/IMG_2663_resized.jpg");
+    url("../images/13095.jpg");
   background-position: 50% 50%, 50%;
-  background-size: cover, auto;
+  background-size: auto, cover;
 }
 
 .header.project-page1.background-image4 {
