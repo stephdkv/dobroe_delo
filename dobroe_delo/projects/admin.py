@@ -34,4 +34,6 @@ class DocumentGroupAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.unregister(User)
 admin.site.unregister(Group)
+admin.site.site_header = "Администрирование Доброе Дело"
+admin.site.site_title = "Администрирование сайта Доброе Дело"
 
