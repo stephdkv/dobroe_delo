@@ -58,6 +58,28 @@ class Document(models.Model):
             verbose_name_plural = "Документы"
 
     def __str__(self):
-        return self.file.name
+        return self.file.name 
+
+class Sponsor(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Название партнера")
+    logo = models.ImageField(upload_to="sponsors/logos/", verbose_name="Логотип")
+    website = models.URLField(blank=True, null=True, verbose_name="Сайт партнера")
+
+    def logo_tag(self):
+        """ Отображение миниатюры логотипа в админке с кликабельной ссылкой """
+        if self.logo:
+            if self.website:
+                return format_html('<a href="{}" target="_blank"><img src="{}" width="100" height="100" style="object-fit: cover;"/></a>', self.website, self.logo.url)
+            return format_html('<img src="{}" width="100" height="100" style="object-fit: cover;"/>', self.logo.url)
+        return "Нет изображения"
+
+    logo_tag.short_description = "Превью"
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Партнера"
+        verbose_name_plural = "Партнеры"
 
 

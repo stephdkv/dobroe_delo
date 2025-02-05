@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
-from .models import Project, ProjectImage, Document, DocumentGroup
+from .models import Project, ProjectImage, Document, DocumentGroup, Sponsor
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
@@ -29,6 +29,12 @@ class DocumentInline(admin.TabularInline):  # Позволяет загружа�
 class DocumentGroupAdmin(admin.ModelAdmin):
     list_display = ("name",)
     inlines = [DocumentInline]  # Встраиваем форму загрузки файлов в группу
+
+class SponsorAdmin(admin.ModelAdmin):
+    list_display = ("name", "logo_tag", "website")  # Теперь отображается ссылка
+    readonly_fields = ("logo_tag",)  # Показываем превью внутри карточки
+
+admin.site.register(Sponsor, SponsorAdmin)
 
 
 admin.site.register(Project, ProjectAdmin)

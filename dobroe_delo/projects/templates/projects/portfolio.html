@@ -183,159 +183,21 @@
           </div>
           <div class="wbs-spacing-30"></div>
           <div class="wbs-client-grid-border">
+            {% for sponsor in sponsors %}
             <div
+              class="wbs-client-logo-item"
               id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df54-a7ca2705"
               data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df54"
-              class="wbs-client-logo-item"
             >
-              <img
-                src="{% static 'images/ceramica.jpg' %}"
-                loading="lazy"
-                alt=""
-                class="wbs-client-logo"
-              />
+              <a href="{{ sponsor.website }}" target="_blank">
+                <img
+                  src="{{ sponsor.logo.url}}"
+                  alt="{{ sponsor.name }}"
+                  class="wbs-client-logo"
+                />
+              </a>
             </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df56-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df56"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-05-04_13-13-36.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 18vw, 13vw"
-                srcset="
-                {% static 'images/photo_2024-05-04_13-13-36-p-500.jpg' %}  500w,
-                {% static 'images/photo_2024-05-04_13-13-36-p-800.jpg' %}  800w,
-                {% static 'images/photo_2024-05-04_13-13-36.jpg' %}      1024w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df58-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df58"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-05-04_13-13-29.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 18vw, 13vw"
-                srcset="
-                {% static 'images/photo_2024-05-04_13-13-29-p-500.jpg' %} 500w,
-                {% static 'images/photo_2024-05-04_13-13-29.jpg' %}       707w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df5a-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df5a"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/idlab.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 18vw, 13vw"
-                srcset="{% static 'images/idlab-p-500.jpg' %}  500w"
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df5c-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df5c"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-05-04_13-13-49.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 18vw, 13vw"
-                srcset="
-                {% static 'images/photo_2024-05-04_13-13-49-p-500.jpg' %}  500w,
-                {% static 'images/photo_2024-05-04_13-13-49-p-800.jpg' %}  800w,
-                {% static 'images/photo_2024-05-04_13-13-49.jpg' %}       1007w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df5e-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df5e"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-08-15_16-43-21-Photoroom.png' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 16vw, (max-width: 991px) 13vw, 11vw"
-                srcset="
-                {% static 'images/photo_2024-08-15_16-43-21-Photoroom-p-500.png' %}   500w,
-                {% static 'images/photo_2024-08-15_16-43-21-Photoroom-p-800.png ' %}  800w,
-                {% static 'images/photo_2024-08-15_16-43-21-Photoroom-p-1080.png' %} 1080w,
-                {% static 'images/photo_2024-08-15_16-43-21-Photoroom.png' %}        1280w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df60-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df60"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-09-06_11-52-24.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 17vw, (max-width: 991px) 13vw, 12vw"
-                srcset="
-                {% static 'images/photo_2024-09-06_11-52-24-p-500.jpg ' %}  500w,
-                  {% static 'images/photo_2024-09-06_11-52-24-p-800.jpg' %}   800w,
-                  {% static 'images/photo_2024-09-06_11-52-24-p-1080.jpg' %} 1080w,
-                  {% static 'images/photo_2024-09-06_11-52-24.jpg ' %}       1103w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df62-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df62"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/photo_2024-08-15_16-42-33-Photoroom.png' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 15vw, 80px"
-                srcset="
-                {% static 'images/photo_2024-08-15_16-42-33-Photoroom-p-500.png' %}  500w,
-                  {% static 'images/photo_2024-08-15_16-42-33-Photoroom-p-800.png' %} 800w,
-                  {% static 'images/photo_2024-08-15_16-42-33-Photoroom.png ' %}      827w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
-            <div
-              id="w-node-d6e0708d-d7e3-50bd-ecb2-5c1aa896df62-a7ca2705"
-              data-w-id="d6e0708d-d7e3-50bd-ecb2-5c1aa896df62"
-              class="wbs-client-logo-item"
-            >
-              <img
-                src="{% static 'images/automatika55.jpg' %}"
-                loading="lazy"
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 15vw, 80px"
-                srcset="
-                {% static 'images/automatika55.jpg' %} 500w,
-                {% static 'images/automatika55.jpg' %} 800w,
-                {% static 'images/automatika55.jpg' %} 827w
-                "
-                alt=""
-                class="wbs-client-logo"
-              />
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -473,7 +335,7 @@
                 id="w-node-a1e66c3c-005f-f059-4629-7b1edb190153-a7ca2705"
                 class="wbs-cta-7-button"
               >
-                <a href="#" class="wbs-button-primary-1 w-button"
+                <a href="#contact" class="wbs-button-primary-1 w-button"
                   >Присоединиться</a
                 >
               </div>
