@@ -8,7 +8,7 @@ translator = Translator()
 
 class Project(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название проекта")
-    description = models.TextField(verbose_name="Описание")
+    description = models.TextField(blank=True, null=True, verbose_name="Описание")
     slug = models.SlugField(unique=True, blank=True, editable=False)  # Поле заполняется автоматически
 
     def save(self, *args, **kwargs):
@@ -28,14 +28,20 @@ class Project(models.Model):
         verbose_name_plural = "Проекты"
 
 class ProjectImage(models.Model):
+    DEFAULT_IMAGE = "projects/images/default.png"  # Путь к дефолтному изображению
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="images")
-    image = models.ImageField(upload_to="projects/images/", verbose_name="Фото")
+    image = models.ImageField(upload_to="projects/images/",null=True, verbose_name="Фото")
     def image_tag(self):
-        if self.image:
+        if self.image:  # Если изображение загружено → показываем его
             return format_html('<img src="{}" width="100" height="100" style="object-fit: cover;"/>', self.image.url)
-        return "Нет изображения"
-    
+        return format_html('<img src="{}" width="100" height="100" style="object-fit: cover;"/>', self.DEFAULT_IMAGE)
+
     image_tag.short_description = "Превью"  # Заголовок в админке
+
+    def save(self, *args, **kwargs):
+        if not self.image:  # Если изображение не загружено, устанавливаем дефолтное
+            self.image = self.DEFAULT_IMAGE
+        super().save(*args, **kwargs)  
     
 
 class DocumentGroup(models.Model):

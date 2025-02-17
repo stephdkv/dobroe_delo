@@ -355,7 +355,7 @@
             >
               {% with project.images.all|first as first_image %}
               <img
-                src="{{ first_image.image.url }}"
+              src="{{ first_image.image.url|default:'/media/projects/images/default.png' }}" 
                 alt="{{ project.title }}"
                 sizes="(max-width: 479px) 96vw, (max-width: 767px) 31vw, (max-width: 991px) 229.328125px, 299.984375px"
                 class="image"
