@@ -19,12 +19,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from projects import views
-from projects.views import documents_view
+from projects.views import documents_view, project_detail_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Админка
     path('', include('projects.urls')),
-    path('projects/<slug:slug>/', views.project_detail_view, name='project_detail'),
+    path('projects/<slug:slug>/', project_detail_view, name='project_detail'),
     path("documents/", documents_view, name="documents"),  # Подключение маршрутов из приложения projects
 ] 
 

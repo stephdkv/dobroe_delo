@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, DocumentGroup, Document, Sponsor
+from .models import Project, DocumentGroup, Sponsor
 import os
 
 def portfolio_view(request):
@@ -20,5 +20,9 @@ def documents_view(request):
             doc.short_name = os.path.basename(doc.file.name)
 
     return render(request, "documents.html", {"document_groups": document_groups})
+
+def project_detail_view(request, slug):
+    project = Project.objects.prefetch_related("documents").get(slug=slug)
+    return render(request, "projects/project_detail.html", {"project": project})
   
 

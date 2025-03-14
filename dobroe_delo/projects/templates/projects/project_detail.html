@@ -78,6 +78,7 @@
         /></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <a href="/" class="nav-link_1 w-nav-link">←  назад</a>
+          <a href="#documents" class="nav-link_1 w-nav-link">документы</a>
         </nav>
         <div class="menu-button w-nav-button">
           <div class="w-icon-nav-menu"></div>
@@ -119,6 +120,19 @@
           style="padding-bottom: 100px"
         />
         {% endfor %}
+      </div>
+    </div>
+    <div id="documents" class="section grey">
+      <div class="w-container">
+        <h2>документы</h2>
+        <div class="divider grey"></div>
+        <ul style="padding-left: 0px; padding-bottom: 50px">
+          {% for document in project.documents.all %}
+          <li style="list-style-type: none; padding-bottom: 10px">
+            <a href="{{ document.file.url }}">{{ document.short_name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="about-section">
